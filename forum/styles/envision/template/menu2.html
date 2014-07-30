@@ -1,0 +1,29 @@
+<table class="tablebg" style="border-top:none;" cellspacing="1" cellpadding="0" border="0" width="100%">
+<tr>
+	<td class="menu2">
+	    <table width="100%">
+	        <tr style="padding:0; margin:0;" align="center">
+            <!-- IF not S_USER_LOGGED_IN -->
+			    <!-- IF not S_IS_BOT -->
+				    <!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><td style="padding:0; margin:0;"> <a class="menu2" href="{U_REGISTER}" >{L_REGISTER}</a></td><!-- ENDIF -->
+                    <td style="padding:0; margin:0;"><a class="menu2" href="{U_LOGIN_LOGOUT}" rel="nofollow">{L_LOGIN}</a></td>
+				<!-- ENDIF -->
+                <!-- IF S_DISPLAY_SEARCH --><td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH}"><strong>{L_SEARCH}</strong></a></td><!-- ENDIF -->
+			        <td style="padding:0; margin:0;"><a class="menu2" href="{U_FAQ}">{L_FAQ}</a></td>
+			<!-- ENDIF -->
+			<!-- IF S_USER_LOGGED_IN -->
+                <td style="padding:0; margin:0;"><a class="menu2" href="{U_PROFILE}" rel="nofollow">{L_PROFILE}</a></td>
+			    <!-- IF S_DISPLAY_SEARCH -->
+                    <td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH}"><strong>{L_SEARCH}</strong></a></td>
+                    <td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></td>
+	                <td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></td>
+	                <td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></td>
+		        <!-- ENDIF -->
+                <td style="padding:0; margin:0;"><a class="menu2" href="{U_FAQ}">{L_FAQ}</a></td>
+                <td style="padding:0; margin:0;"><a class="menu2" href="{U_LOGIN_LOGOUT}">{L_LOGOUT}</a></td>
+            <!-- ENDIF -->
+		    </tr>
+		</table>
+	</td>
+</tr>
+</table>

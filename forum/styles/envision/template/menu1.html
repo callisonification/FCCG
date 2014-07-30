@@ -1,0 +1,53 @@
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+    <!-- IF SCRIPT_NAME == 'index' -->    
+	    <form method="post" action="{S_LOGIN_ACTION}">	
+            <table width="100%" cellspacing="0" cellpadding="0">
+		        <tr>
+    		        <td width="33%" class="gensmall" style="white-space: nowrap;">
+					    <label for="username">{L_USERNAME}:</label><br /><br style="line-height: 1em;" />
+               	        <label for="password">{L_PASSWORD}:</label><br />
+					</td>
+                	<td width="33%">
+					    <input style="margin-bottom:4px;" tabindex="100" class="post" type="text" name="username" id="username" size="15" />
+			            <input tabindex="101" class="post" type="password" name="password" id="password" size="15" />
+				    </td>
+					<td width="34%">&nbsp;&nbsp;<button type="submit" name="login" value="{L_LOGIN}" class="bbbutton"><img style="vertical-align: middle;" src="{T_THEME_PATH}/images/login.png" width="32" height="32" alt="{L_LOGIN}"  /></button></td>
+				</tr>
+				<!-- IF S_AUTOLOGIN_ENABLED -->
+					<tr>
+					    <td width="33%" class="gensmall" style="white-space: nowrap;">
+					        <label for="autologin">{L_LOG_ME_IN}</label>
+					    </td>
+					    <td width="33%">
+					        <input type="checkbox" name="autologin" id="autologin" />
+						</td>
+					</tr>
+				<!-- ENDIF -->				
+			</table>
+        {S_LOGIN_REDIRECT}
+		{S_FORM_TOKEN}
+		</form>
+<!-- ELSE -->
+    <table width="100%" cellspacing="3px" cellpadding="0">
+		<tr>
+    		<td class="genmed" style="white-space: nowrap;">
+			    <a href="{U_LOGIN_LOGOUT}"><strong>{L_LOGIN_LOGOUT}</strong></a>
+			    <!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --> | <a href="{U_REGISTER}"><strong>{L_REGISTER}</strong></a><!-- ENDIF -->
+			</td>
+		</tr>
+    </table>
+<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+<table width="100%" cellspacing="0">
+    <tr>
+        <td nowrap="nowrap" class="genmed">
+			<strong>{S_USERNAME}</strong><br />
+			{LAST_VISIT_DATE}<br />
+			<!-- IF S_DISPLAY_PM --><a  href="{U_PRIVATEMSGS}">{L_PRIVATE_MESSAGES}</a> : <span <!-- IF S_USER_NEW_PRIVMSG -->style="color:red!important;"<!-- ENDIF -->>{PRIVATE_MESSAGE_INFO}</span><!-- ENDIF -->
+			<!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><br /><a style="color:red!important;" href="{U_PRIVATEMSGS}">&nbsp;{PRIVATE_MESSAGE_INFO_UNREAD}</a><!-- ENDIF -->
+		</td>
+	</tr>
+</table>
+<!-- ENDIF -->

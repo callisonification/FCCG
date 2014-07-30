@@ -1,0 +1,462 @@
+############################################################## 
+## Title: phpBB 3.0.6 to phpBB 3.0.7 envision Changes
+## Author: Akansu(foruz.net), naderman < naderman@phpbb.com > (Nils Adermann) http://www.phpbb.com 
+## Description: 
+##		
+##		
+##		These are the phpBB 3.0.6 to phpBB 3.0.7 envision Changes summed up into a
+##		little Mod. These changes are only partial and do not include any code changes,
+##		therefore not meant for updating phpBB.
+##		
+##			
+##		
+## 
+## Files To Edit: 
+##		styles/envision/imageset/imageset.cfg
+##		styles/envision/style.cfg
+##		styles/envision/template/captcha_default.html
+##		styles/envision/template/captcha_qa.html
+##		styles/envision/template/captcha_recaptcha.html
+##		styles/envision/template/editor.js
+##		styles/envision/template/login_body.html
+##		styles/envision/template/login_forum.html
+##		styles/envision/template/mcp_ban.html
+##		styles/envision/template/mcp_logs.html
+##		styles/envision/template/mcp_notes_user.html
+##		styles/envision/template/mcp_post.html
+##      styles/envision/template/menu1.html
+##		styles/envision/template/overall_header.html
+##		styles/envision/template/template.cfg
+##	    styles/envision/template/ucp_pm_viewmessage_print.html
+##		styles/envision/template/ucp_profile_avatar.html
+##		styles/envision/template/viewforum_body.html
+##		styles/envision/template/viewtopic_body.html
+##		styles/envision/template/viewtopic_print.html
+##		styles/envision/theme/stylesheet.css
+##		styles/envision/theme/theme.cfg
+##
+## License: http://opensource.org/licenses/gpl-license.php GNU General Public License v2 
+############################################################## 
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/imageset/imageset.cfg
+
+#
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 22
+
+version = 3.0.6
+
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+version = 3.0.7
+
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/style.cfg
+
+#
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 9
+
+version = 3.0.6
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+
+version = 3.0.7
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/captcha_default.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 9
+		<!-- IF S_CONFIRM_REFRESH --><input type="submit" name="refresh_vc" id="refresh_vc" class="button2" value="{L_VC_REFRESH}" /><!-- ENDIF --></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<!-- IF S_CONFIRM_REFRESH --><input type="submit" name="refresh_vc" id="refresh_vc" class="btnlite" value="{L_VC_REFRESH}" /><!-- ENDIF --></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/captcha_qa.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 1
+		<th colspan="2" valign="middle">{QA_CONFIRM_QUESTION}</th>
+	</tr>
+	<tr>
+		<td class="row1"><b class="genmed">{QA_CONFIRM_QUESTION}:</b><br /></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<th colspan="2" valign="middle">{L_CONFIRM_QUESTION}</th>
+	</tr>
+	<tr>
+		<td class="row1"><b class="genmed">{QA_CONFIRM_QUESTION}:</b><br /><span class="gensmall">{L_CONFIRM_QUESTION_EXPLAIN}</span></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/captcha_recaptcha.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 6
+		<td class="row1"><b class="genmed">{L_CONFIRM_CODE}:</b><br /><span class="gensmall">{L_RECAPTCHA_EXPLAIN}</span></td>
+		<td class="row2">
+		<script type="text/javascript">
+		// <![CDATA[
+		var RecaptchaOptions = {
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 11
+			lang : '{L_RECAPTCHA_LANG}',
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+			lang : '{LA_RECAPTCHA_LANG}',
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/editor.js
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 274
+	txtarea.selectionStart = selEnd + open.length + close.length;
+	txtarea.selectionEnd = txtarea.selectionStart;
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+	txtarea.selectionStart = selStart + open.length;
+	txtarea.selectionEnd = selEnd + open.length;
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/menu1.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 18
+	{S_FORM_TOKEN}
+    </form>
+
+#
+#-----[ BEFORE, ADD ]---------------------------------------------
+#
+	{S_LOGIN_REDIRECT}
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/login_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 75
+<tr>
+	<td class="cat" <!-- IF not S_ADMIN_AUTH or S_CONFIRM_CODE -->colspan="2"<!-- ENDIF --> align="center">{S_HIDDEN_FIELDS}<input type="submit" name="login" class="btnmain" value="{L_LOGIN}" tabindex="5" /></td>
+</tr>
+</table>
+{S_FORM_TOKEN}
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+{S_LOGIN_REDIRECT}
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/login_forum.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 30
+	<tr> 
+		<td class="cat" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="login" class="btnmain" value="{L_LOGIN}" tabindex="3" /></td>
+	</tr>
+	</table>
+	{S_FORM_TOKEN}
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+	{S_LOGIN_REDIRECT}
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/mcp_ban.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 82
+		<td class="row2"><input style="border: 0; width: 100%" type="text" name="unbanlength" disabled="disabled" /></td>
+	</tr>
+	<tr>
+		<td class="row1" valign="top"><b>{L_BAN_REASON}:</b></td>
+		<td class="row2"><textarea style="border: 0; width: 100%" name="unbanreason" disabled="disabled" rows="5" cols="80">&nbsp;</textarea></td>
+	</tr>
+	<tr>
+		<td class="row1" valign="top"><b>{L_BAN_GIVE_REASON}:</b></td>
+		<td class="row2"><textarea style="border: 0; width: 100%" name="unbangivereason" disabled="disabled" rows="5" cols="80">&nbsp;</textarea></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<td class="row2"><input style="border: 0; width: 100%" type="text" name="unbanlength" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td class="row1" valign="top"><b>{L_BAN_REASON}:</b></td>
+		<td class="row2"><textarea style="border: 0; width: 100%" name="unbanreason" readonly="readonly" rows="5" cols="80">&nbsp;</textarea></td>
+	</tr>
+	<tr>
+		<td class="row1" valign="top"><b>{L_BAN_GIVE_REASON}:</b></td>
+		<td class="row2"><textarea style="border: 0; width: 100%" name="unbangivereason" readonly="readonly" rows="5" cols="80">&nbsp;</textarea></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/mcp_logs.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 20
+		<td class="row3" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->"><span class="gensmall">{L_SEARCH_KEYWORDS}:</span> <input type="text" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" /></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<td class="row3" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->"><span class="gensmall">{L_SEARCH_KEYWORDS}:</span> <input type="text" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="btnlite" name="filter" value="{L_SEARCH}" /></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/mcp_notes_user.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 53
+		<td colspan="5" class="row3"><span class="gensmall">{L_SEARCH_KEYWORDS}:</span> <input type="text" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" /></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<td colspan="5" class="row3"><span class="gensmall">{L_SEARCH_KEYWORDS}:</span> <input type="text" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="btnlite" name="filter" value="{L_SEARCH}" /></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/mcp_post.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 56
+		<td class="row1"><b class="gen">{L_THIS_POST_IP}: </b></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<td class="row1"><b class="gen"><!-- IF S_PM -->{L_THIS_PM_IP}<!-- ELSE -->{L_THIS_POST_IP}<!-- ENDIF -->: </b></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/overall_header.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 14
+	<link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" />
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_TOPICS}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/template.cfg
+#
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 9
+
+version = 3.0.6
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+
+version = 3.0.7
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/ucp_pm_viewmessage_print.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 83
+			<!-- IF to_recipient.COLOUR --><span style="color:{to_recipient.COLOUR}"><!-- ELSE --><span<!-- IF to_recipient.IS_GROUP --> class="sep"<!-- ENDIF -->><!-- ENDIF -->{to_recipient.NAME}</span>&nbsp;
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+			<span<!-- IF to_recipient.IS_GROUP --> class="sep"<!-- ENDIF -->>{to_recipient.NAME}</span>&nbsp;
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/ucp_profile_avatar.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 38
+		<td class="row2"><input class="post" type="text" name="width" size="3" value="{AVATAR_WIDTH}" /> <span class="gen">px X </span> <input class="post" type="text" name="height" size="3" value="{AVATAR_HEIGHT}" /> <span class="gen">px</span></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<td class="row2"><input class="post" type="text" name="width" size="3" value="{AVATAR_WIDTH}" /> <span class="gen">{L_PIXEL} &times; </span> <input class="post" type="text" name="height" size="3" value="{AVATAR_HEIGHT}" /> <span class="gen">{L_PIXEL}</span></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/viewforum_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 123
+		</tr>
+		<tr>
+			<td class="row1" align="center"><span class="genmed">{L_USERNAME}:</span> <input class="post" type="text" name="username" size="10" />&nbsp; <span class="genmed">{L_PASSWORD}:</span> <input class="post" type="password" name="password" size="10" /><!-- IF S_AUTOLOGIN_ENABLED -->&nbsp; <span class="gensmall">{L_LOG_ME_IN}</span> <input type="checkbox" class="radio" name="autologin" /><!-- ENDIF -->&nbsp; <input type="submit" class="btnmain" name="login" value="{L_LOGIN}" /></td>
+		</tr>
+		</table>
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+		{S_LOGIN_REDIRECT}
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/template/viewtopic_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 20
+
+		<!-- IF U_MCP -->
+	        <p class="linkmcp">[ <a href="{U_MCP}">{L_MCP}</a> ]</p>
+
+#
+#-----[ AFTER, ADD]---------------------------------------------
+#
+		<br />
+#
+#
+#-----[ FIND ]--------------------------------------------- 
+#Around Line 321
+
+</table>
+
+<!-- END postrow -->
+
+#
+#-----[ BEFORE, ADD ]---------------------------------------------
+# 
+			<!-- IF not postrow.S_FIRST_ROW and not S_IS_BOT -->
+		
+<p>	<img src="{T_THEME_PATH}/images/spacer.gif" width="5" height="5" alt="#" /></p>
+			
+		<!-- ENDIF -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/theme/stylesheet.css
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 377
+.legend {
+	text-align:center;
+	margin: 0 auto;
+}
+
+/* Links
+ ------------ */
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+
+/* Links adjustment to correctly display an order of rtl/ltr mixed content */
+.rtl a {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 717
+
+border: #FFFFFF groove 1px ;
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+
+border: 1px inset;
+}
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/envision/theme/theme.cfg
+#
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 9
+
+version = 3.0.6
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+
+version = 3.0.7
+
+# 
+#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------ 
+# 
+# EoM

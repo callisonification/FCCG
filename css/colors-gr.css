@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* 
+	CSS Document 
+	author 	: Christopher Allison
+	email 	: callisonification@gmail.com
+	date	: 7/28/14
+	version	: 3.5
+*/
+
+.navbar, .footer-bg, 
+.modal-header, .modal-footer {
+	background-color:rgba(26, 188, 156,0.9) !important;
+}
+.modal-header h4 {
+	color:rgba(236, 240, 241,1.0) !important;	
+}
+.modal-body label {
+	color:rgba(41, 128, 185,1.0);	
+}
+.navbar-nav > li > a {
+	color:rgba(236, 240, 241,1.0) !important;	
+	background-color:rgba(52, 152, 219,0) !important;
+	border-left:1px solid rgba(22, 160, 133,1.0);
+	
+	/* hover transition */
+	-webkit-transition: background-color 400ms linear;
+	-moz-transition: background-color 400ms linear;
+	-ms-transition: background-color 400ms linear;
+	-o-transition: background-color 400ms linear;
+	transition: background-color 400ms linear;
+}
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a.active,
+.navbar-nav > li.dropdown.open,
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus {
+	color:rgba(236, 240, 241,1.0) !important;
+	background-color:rgba(22, 160, 133,0.9) !important;
+	
+	/* hover transition */
+	-webkit-transition: background-color 400ms, color 400ms linear;
+	-moz-transition: background-color 400ms, color 400ms linear;
+	-ms-transition: background-color 400ms, color 400ms linear;
+	-o-transition: background-color 400ms, color 400ms linear;
+	transition: background-color 400ms, color 400ms linear;
+}
+.navbar-nav .dropdown:last-child a {
+	border-right:1px solid rgba(22, 160, 133,1.0);
+}
+.dropdown .caret {
+	border-bottom-color: rgba(236, 240, 241,1.0) !important;
+    border-top-color: rgba(236, 240, 241,1.0) !important;	
+}
+.navbar-default {
+	border-color:rgba(22, 160, 133,1.0);	
+}
+.dropdown-toggle span.glyphicon {
+	color:rgba(41, 128, 185,1.0);	
+}
+.brand-banner a,
+.brand-banner h3 {
+	color:rgba(41, 128, 185,0.9);	
+}
+
+/*
+ *	aside nav color styles
+ */
+.nav-stacked, 
+.container-fluid .sidebar {
+	background-color:rgba(26, 188, 156,0.9) !important;
+}
+.inline-subnav {
+	background-color:rgba(26, 188, 156,0.8) !important;
+}
+.nav-stacked li a,
+.container-fluid .sidebar li a {	
+	color:rgba(236, 240, 241,1.0);
+	background-color:rgba(52, 152, 219,0) !important;
+}
+.nav-stacked .active,
+.container-fluid .sidebar .active {
+	background-color:rgba(22, 160, 133,0.8) !important;
+}
+.nav-stacked a:hover,
+.container-fluid .sidebar a:hover {
+	background-color:rgba(22, 160, 133,0.8) !important;
+}
+.nav .nav-divider,
+.container-fluid .nav-sidebar .nav-divider {
+	background-color:rgba(22, 160, 133,1.0) !important;	
+}
+
+/*
+ *	footer color styles
+ */
+ footer h4 {
+	color:rgba(22, 160, 133,0.9); 
+ }
+.footer-bg {
+	background-color:rgba(26, 188, 156,1.0) !important; 
+ }
+ .mission .lead {
+	color:rgba(236, 240, 241,1.0); 
+ }
+ .footer-form .submit,
+ .modal .submit {
+	background-color:rgba(52, 152, 219,1.0);
+	border:1px solid rgba(41, 128, 185,1.0);
+	color: rgba(236, 240, 241,1.0);
+	
+	/* hover transition */
+	-webkit-transition: background-color 500ms linear;
+	-moz-transition: background-color 500ms linear;
+	-ms-transition: background-color 500ms linear;
+	-o-transition: background-color 500ms linear;
+	transition: background-color 500ms linear;		
+ }
+.footer-form .submit:hover,
+.modal .submit:hover {
+	background-color:rgba(41, 128, 185,1.0);
+	border:1px solid rgba(52, 152, 219,1.0);
+	
+	/* hover transition */
+	-webkit-transition: background-color 500ms linear;
+	-moz-transition: background-color 500ms linear;
+	-ms-transition: background-color 500ms linear;
+	-o-transition: background-color 500ms linear;
+	transition: background-color 500ms linear;	
+}
+.footer-sig .signature span,
+.footer-sig a {
+	color:rgba(22, 160, 133,1.0);	
+}
+
+/*
+ *	social tab color styles
+ */
+.social-tab {
+	color:rgba(236, 240, 241,1.0) !important;	
+	background-color:rgba(52, 152, 219,0.9)!important;
+	border:1px solid rgba(41, 128, 185,1.0);
+}
+.social-tab ul {
+	border:2px solid rgba(41, 128, 185,1.0);	
+}
+.social-tab ul li a {
+	color:rgba(236, 240, 241,1.0);	
+}

@@ -1,0 +1,813 @@
+############################################################## 
+## This instructions don't costain new features about envision 2.0.0, envision 2.0.0 compatible with phpBB 3.0.8 and contains new features(rollover buttons for all languges, tree breadcrums, etc)As you do this instructions, you have updated your theme to compatible for phpbb 3.0.8 but it will not be envision 2.0.0
+
+Title: phpBB 3.0.7-PL1 to phpBB 3.0.8 subsilver2 Changes
+## Author: naderman < naderman@phpbb.com > (Nils Adermann) http://www.phpbb.com 
+## Description: 
+##		
+##		
+##		These are the phpBB 3.0.7-PL1 to phpBB 3.0.8 subsilver2 Changes summed up into a
+##		little Mod. These changes are only partial and do not include any code changes,
+##		therefore not meant for updating phpBB.
+##		
+##			
+##		
+## 
+## Files To Edit: 
+##		styles/subsilver2/imageset/imageset.cfg
+##		styles/subsilver2/style.cfg
+##		styles/subsilver2/template/attachment.html
+##		styles/subsilver2/template/captcha_default.html
+##		styles/subsilver2/template/captcha_recaptcha.html
+##		styles/subsilver2/template/editor.js
+##		styles/subsilver2/template/index_body.html
+##		styles/subsilver2/template/login_body.html
+##		styles/subsilver2/template/overall_header.html
+##		styles/subsilver2/template/posting_body.html
+##		styles/subsilver2/template/posting_buttons.html
+##		styles/subsilver2/template/posting_topic_review.html
+##		styles/subsilver2/template/search_body.html
+##		styles/subsilver2/template/template.cfg
+##		styles/subsilver2/template/ucp_pm_history.html
+##		styles/subsilver2/template/ucp_pm_message_footer.html
+##		styles/subsilver2/template/ucp_pm_viewfolder.html
+##		styles/subsilver2/template/ucp_profile_signature.html
+##		styles/subsilver2/template/viewforum_body.html
+##		styles/subsilver2/template/viewtopic_body.html
+##		styles/subsilver2/theme/theme.cfg
+##
+## License: http://opensource.org/licenses/gpl-license.php GNU General Public License v2 
+############################################################## 
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/imageset/imageset.cfg
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 17
+#
+
+# General Information about this style
+name = subsilver2
+copyright = &copy; phpBB Group, 2003
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 22
+version = 3.0.7
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+version = 3.0.8
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/style.cfg
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 17
+#
+
+# General Information about this style
+name = subsilver2
+copyright = &copy; 2005 phpBB Group
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 22
+version = 3.0.7
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+version = 3.0.8
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/attachment.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 56
+				<param name="movie" value="{_file.U_DOWNLOAD_LINK}" />
+				<param name="play" value="true" />
+				<param name="loop" value="true" />
+				<param name="quality" value="high" />
+				<param name="allowScriptAccess" value="never" />
+				<param name="allowNetworking" value="internal" />
+				<embed src="{_file.U_DOWNLOAD_LINK}" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="{_file.WIDTH}" height="{_file.HEIGHT}" play="true" loop="true" quality="high" allowscriptaccess="never" allownetworking="internal"></embed>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+				<param name="movie" value="{_file.U_VIEW_LINK}" />
+				<param name="play" value="true" />
+				<param name="loop" value="true" />
+				<param name="quality" value="high" />
+				<param name="allowScriptAccess" value="never" />
+				<param name="allowNetworking" value="internal" />
+				<embed src="{_file.U_VIEW_LINK}" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="{_file.WIDTH}" height="{_file.HEIGHT}" play="true" loop="true" quality="high" allowscriptaccess="never" allownetworking="internal"></embed>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/captcha_default.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 1
+	<tr>
+		<th colspan="2" valign="middle">{L_CONFIRM_CODE}</th>
+	</tr>
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+	<!-- IF S_TYPE == 1 -->
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 1
+	<tr>
+		<td class="row3" colspan="2"><span class="gensmall">{L_CONFIRM_EXPLAIN}</span></td>
+	</tr>
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+	<!-- ENDIF -->	
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/captcha_recaptcha.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 7
+		<td class="row2">
+		<script type="text/javascript">
+		// <![CDATA[
+		var RecaptchaOptions = {
+			lang : '{LA_RECAPTCHA_LANG}',
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+			theme : 'clean',
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/editor.js
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 4
+*/
+
+// Startup variables
+var imageTag = false;
+var theSelection = false;
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+var bbcodeEnabled = true;
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 155
+	if (!isNaN(textarea.selectionStart))
+	{
+		var sel_start = textarea.selectionStart;
+		var sel_end = textarea.selectionEnd;
+
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 160
+		mozWrap(textarea, text, '')
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		mozWrap(textarea, text, '');
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 194
+function addquote(post_id, username)
+{
+	var message_name = 'message_' + post_id;
+	var theSelection = '';
+	var divarea = false;
+
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+function addquote(post_id, username, l_wrote)
+{
+	var message_name = 'message_' + post_id;
+	var theSelection = '';
+	var divarea = false;
+
+	if (l_wrote === undefined)
+	{
+		// Backwards compatibility
+		l_wrote = 'wrote';
+	}
+
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 238
+			theSelection = divarea.innerHTML.replace(/<br>/ig, '\n');
+			theSelection = theSelection.replace(/<br\/>/ig, '\n');
+			theSelection = theSelection.replace(/&lt\;/ig, '<');
+			theSelection = theSelection.replace(/&gt\;/ig, '>');
+			theSelection = theSelection.replace(/&amp\;/ig, '&');
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+			theSelection = theSelection.replace(/&nbsp\;/ig, ' ');
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 256
+		insert_text('[quote="' + username + '"]' + theSelection + '[/quote]');
+	}
+
+	return;
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		if (bbcodeEnabled)
+		{
+			insert_text('[quote="' + username + '"]' + theSelection + '[/quote]');
+		}
+		else
+		{
+			insert_text(username + ' ' + l_wrote + ':' + '\n');
+			var lines = split_lines(theSelection);
+			for (i = 0; i < lines.length; i++)
+			{
+				insert_text('> ' + lines[i] + '\n');
+			}
+		}
+	}
+
+	return;
+}
+
+
+function split_lines(text)
+{
+	var lines = text.split('\n');
+	var splitLines = new Array();
+	var j = 0;
+	for(i = 0; i < lines.length; i++)
+	{
+		if (lines[i].length <= 80)
+		{
+			splitLines[j] = lines[i];
+			j++;
+		}
+		else
+		{
+			var line = lines[i];
+			do
+			{
+				var splitAt = line.indexOf(' ', 80);
+				
+				if (splitAt == -1)
+				{
+					splitLines[j] = line;
+					j++;
+				}
+				else
+				{
+					splitLines[j] = line.substring(0, splitAt);
+					line = line.substring(splitAt);
+					j++;
+				}
+			}
+			while(splitAt != -1);
+		}
+	}
+	return splitLines;
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 328
+	var s2 = (txtarea.value).substring(selStart, selEnd)
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+	var s2 = (txtarea.value).substring(selStart, selEnd);
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 386
+				document.write('<td bgcolor="#' + color + '">');
+				document.write('<a href="#" onclick="bbfontstyle(\'[color=#' + color + ']\', \'[/color]\'); return false;" onmouseover="helpline(\'s\');"  onmouseout="helpline(\'tip\');"><img src="images/spacer.gif" width="' + width + '" height="' + height + '" alt="#' + color + '" title="#' + color + '" /></a>');
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+				document.write('<td bgcolor="#' + color + '" style="width: ' + width + 'px; height: ' + height + 'px;">');
+				document.write('<a href="#" onclick="bbfontstyle(\'[color=#' + color + ']\', \'[/color]\'); return false;"><img src="images/spacer.gif" width="' + width + '" height="' + height + '" alt="#' + color + '" title="#' + color + '" /></a>');
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/index_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 87
+	<td width="20" align="center">{FORUM_NEW_IMG}</td>
+	<td><span class="gensmall">{L_NEW_POSTS}</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center">{FORUM_IMG}</td>
+	<td><span class="gensmall">{L_NO_NEW_POSTS}</span></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+	<td width="20" align="center">{FORUM_UNREAD_IMG}</td>
+	<td><span class="gensmall">{L_UNREAD_POSTS}</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center">{FORUM_IMG}</td>
+	<td><span class="gensmall">{L_NO_UNREAD_POSTS}</span></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/login_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 70
+<table class="tablebg" width="100%" cellspacing="1">
+		
+	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+{S_LOGIN_REDIRECT}
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 70
+<tr>
+	<td class="cat" <!-- IF not S_ADMIN_AUTH or S_CONFIRM_CODE -->colspan="2"<!-- ENDIF --> align="center">{S_HIDDEN_FIELDS}<input type="submit" name="login" class="btnmain" value="{L_LOGIN}" tabindex="5" /></td>
+</tr>
+</table>
+{S_FORM_TOKEN}
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 75
+{S_LOGIN_REDIRECT}
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+# Just remove/delete the lines (replacing with an empty line)
+
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 85
+<!-- INCLUDE breadcrumbs.html -->
+
+<br clear="all" />
+
+<div align="{S_CONTENT_FLOW_END}"><!-- INCLUDE jumpbox.html --></div>
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 90
+
+<!-- INCLUDE overall_footer.html -->
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+
+<script type="text/javascript">
+// <![CDATA[
+	(function()
+	{
+		var elements = document.getElementsByName("{USERNAME_CREDENTIAL}");
+		for (var i = 0; i < elements.length; ++i)
+		{
+			if (elements[i].tagName.toLowerCase() == 'input')
+			{
+				elements[i].focus();
+				break;
+			}
+		}
+	})();
+// ]]>
+</script>
+
+<!-- INCLUDE overall_footer.html -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/overall_header.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 9
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9" />
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 199 in menu2.html
+<td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+<!-- IF S_LOAD_UNREADS --><td style="padding:0; margin:0;"><a class="menu2" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></td><!-- ENDIF -->
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/posting_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 340
+			<!-- IF S_SAVE_ALLOWED -->&nbsp; <input class="btnlite" type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE}" /><!-- ENDIF -->
+			<!-- IF S_HAS_DRAFTS -->&nbsp; <input class="btnlite" type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD}" /><!-- ENDIF -->
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+			<!-- IF S_SAVE_ALLOWED -->&nbsp; <input class="btnlite" type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" /><!-- ENDIF -->
+			<!-- IF S_HAS_DRAFTS -->&nbsp; <input class="btnlite" type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" /><!-- ENDIF -->
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 363
+			<!-- IF S_SAVE_ALLOWED -->&nbsp; <input class="btnlite" type="submit" accesskey="k" tabindex="12" name="save" value="{L_SAVE}" /><!-- ENDIF -->
+			<!-- IF S_HAS_DRAFTS -->&nbsp; <input class="btnlite" type="submit" accesskey="d" tabindex="13" name="load" value="{L_LOAD}" /><!-- ENDIF -->
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+			<!-- IF S_SAVE_ALLOWED -->&nbsp; <input class="btnlite" type="submit" accesskey="k" tabindex="12" name="save" value="{L_SAVE_DRAFT}" /><!-- ENDIF -->
+			<!-- IF S_HAS_DRAFTS -->&nbsp; <input class="btnlite" type="submit" accesskey="d" tabindex="13" name="load" value="{L_LOAD_DRAFT}" /><!-- ENDIF -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/posting_buttons.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 17
+			c: '{LA_BBCODE_C_HELP}',
+			l: '{LA_BBCODE_L_HELP}',
+			o: '{LA_BBCODE_O_HELP}',
+			p: '{LA_BBCODE_P_HELP}',
+			w: '{LA_BBCODE_W_HELP}',
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+			a: '{LA_BBCODE_A_HELP}',
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 43
+		<input type="button" class="btnbbcode" accesskey="t" name="addlitsitem" value="[*]" style="width: 40px" onclick="bbstyle(-1)" onmouseover="helpline('e')" onmouseout="helpline('tip')" />				
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+		<input type="button" class="btnbbcode" accesskey="y" name="addlitsitem" value="[*]" style="width: 40px" onclick="bbstyle(-1)" onmouseover="helpline('e')" onmouseout="helpline('tip')" />				
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/posting_topic_review.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 1
+
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<th align="center">{L_TOPIC_REVIEW} - {TOPIC_TITLE}</th>
+</tr>
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+<script type="text/javascript">
+// <![CDATA[
+	bbcodeEnabled = {S_BBCODE_ALLOWED};
+// ]]>
+</script>
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 34
+						<td valign="top" nowrap="nowrap">&nbsp;<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE --><a href="#" onclick="addquote({topic_review_row.POST_ID},'{topic_review_row.POSTER_QUOTE}'); return false;">{QUOTE_IMG}</a><!-- ENDIF --></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+						<td valign="top" nowrap="nowrap">&nbsp;<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE --><a href="#" onclick="addquote({topic_review_row.POST_ID},'{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}'); return false;">{QUOTE_IMG}</a><!-- ENDIF --></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/search_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 73
+
+	<br clear="all" />
+
+	<div align="{S_CONTENT_FLOW_END}"><!-- INCLUDE jumpbox.html --></div>
+
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 78
+<!-- INCLUDE overall_footer.html -->
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+<script type="text/javascript">
+// <![CDATA[
+	(function()
+	{
+		var elements = document.getElementsByName("keywords");
+		for (var i = 0; i < elements.length; ++i)
+		{
+			if (elements[i].tagName.toLowerCase() == 'input')
+			{
+				elements[i].focus();
+				break;
+			}
+		}
+	})();
+// ]]>
+</script>
+
+<!-- INCLUDE overall_footer.html -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/template.cfg
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 17
+#
+
+# General Information about this template
+name = subsilver2
+copyright = &copy; phpBB Group, 2003
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 22
+version = 3.0.7
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+version = 3.0.8
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/ucp_pm_history.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 1
+
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<th align="center">{L_MESSAGE_HISTORY} - {HISTORY_TITLE}</th>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+<script type="text/javascript">
+// <![CDATA[
+	bbcodeEnabled = {S_BBCODE_ALLOWED};
+// ]]>
+</script>
+
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<th align="center">{L_MESSAGE_HISTORY}</th>
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 57
+			<td><div class="gensmall" style="float: {S_CONTENT_FLOW_BEGIN};">&nbsp;<!-- IF history_row.U_PROFILE --><a href="{history_row.U_PROFILE}">{PROFILE_IMG}</a> <!-- ENDIF --> <!-- IF history_row.U_EMAIL --><a href="{history_row.U_EMAIL}">{EMAIL_IMG}</a> <!-- ENDIF -->&nbsp;</div> <div class="gensmall" style="float: {S_CONTENT_FLOW_END};"><!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE --><a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}'); return false;"<!-- ENDIF -->>{QUOTE_IMG}</a> <!-- ENDIF --> <!-- IF history_row.U_POST_REPLY_PM --><a href="{history_row.U_POST_REPLY_PM}">{REPLY_IMG}</a><!-- ENDIF -->&nbsp;</div></td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+			<td><div class="gensmall" style="float: {S_CONTENT_FLOW_BEGIN};">&nbsp;<!-- IF history_row.U_PROFILE --><a href="{history_row.U_PROFILE}">{PROFILE_IMG}</a> <!-- ENDIF --> <!-- IF history_row.U_EMAIL --><a href="{history_row.U_EMAIL}">{EMAIL_IMG}</a> <!-- ENDIF -->&nbsp;</div> <div class="gensmall" style="float: {S_CONTENT_FLOW_END};"><!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE --><a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}'); return false;"<!-- ENDIF -->>{QUOTE_IMG}</a> <!-- ENDIF --> <!-- IF history_row.U_POST_REPLY_PM --><a href="{history_row.U_POST_REPLY_PM}">{REPLY_IMG}</a><!-- ENDIF -->&nbsp;</div></td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/ucp_pm_message_footer.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 12
+			<td align="{S_CONTENT_FLOW_BEGIN}"><!-- INCLUDE pagination.html -->
+				<!-- IF S_VIEW_MESSAGE -->
+					<span class="gensmall">
+						<!-- IF U_PRINT_PM --><a href="{U_PRINT_PM}" title="{L_PRINT_PM}">{L_PRINT_PM}</a><!-- IF U_FORWARD_PM --> | <!-- ENDIF --><!-- ENDIF -->
+						<!-- IF U_FORWARD_PM --><a href="{U_FORWARD_PM}" title="{L_FORWARD_PM}">{L_FORWARD_PM}</a><!-- ENDIF -->
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+						<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><!-- IF U_PRINT_PM or U_FORWARD_PM --> | <!-- ENDIF --><a title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a><!-- ENDIF -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/ucp_pm_viewfolder.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 78
+				<!-- IF messagerow.S_PM_DELETED -->
+					{L_MESSAGE_REMOVED_FROM_OUTBOX}<br />
+					<a href="{messagerow.U_REMOVE_PM}" style="float: {S_CONTENT_FLOW_END};">{L_DELETE_MESSAGE}</a>
+				<!-- ELSE -->
+					<a href="{messagerow.U_VIEW_PM}">{messagerow.SUBJECT}</a>
+
+#
+#-----[ AFTER, ADD ]---------------------------------------------
+#
+				<!-- ENDIF -->
+				<!-- IF messagerow.S_PM_REPORTED -->
+					<a href="{messagerow.U_MCP_REPORT}">{REPORTED_IMG}</a>&nbsp;
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/ucp_profile_signature.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 91
+		<!-- ENDIF -->
+		</table>
+	</td>
+</tr>
+
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 96
+<!-- IF SIGNATURE_PREVIEW -->
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+<!-- IF SIGNATURE_PREVIEW != '' -->
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/viewforum_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 279
+				<td width="20" style="text-align: center;">{FOLDER_NEW_IMG}</td>
+				<td class="gensmall">{L_NEW_POSTS}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" style="text-align: center;">{FOLDER_IMG}</td>
+				<td class="gensmall">{L_NO_NEW_POSTS}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" style="text-align: center;">{FOLDER_ANNOUNCE_IMG}</td>
+				<td class="gensmall">{L_ICON_ANNOUNCEMENT}</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">{FOLDER_HOT_NEW_IMG}</td>
+				<td class="gensmall">{L_NEW_POSTS_HOT}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td style="text-align: center;">{FOLDER_HOT_IMG}</td>
+				<td class="gensmall">{L_NO_NEW_POSTS_HOT}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td style="text-align: center;">{FOLDER_STICKY_IMG}</td>
+				<td class="gensmall">{L_ICON_STICKY}</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">{FOLDER_LOCKED_NEW_IMG}</td>
+				<td class="gensmall">{L_NEW_POSTS_LOCKED}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td style="text-align: center;">{FOLDER_LOCKED_IMG}</td>
+				<td class="gensmall">{L_NO_NEW_POSTS_LOCKED}</td>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+				<td width="20" style="text-align: center;">{FOLDER_UNREAD_IMG}</td>
+				<td class="gensmall">{L_UNREAD_POSTS}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" style="text-align: center;">{FOLDER_IMG}</td>
+				<td class="gensmall">{L_NO_UNREAD_POSTS}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td width="20" style="text-align: center;">{FOLDER_ANNOUNCE_IMG}</td>
+				<td class="gensmall">{L_ICON_ANNOUNCEMENT}</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">{FOLDER_HOT_UNREAD_IMG}</td>
+				<td class="gensmall">{L_UNREAD_POSTS_HOT}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td style="text-align: center;">{FOLDER_HOT_IMG}</td>
+				<td class="gensmall">{L_NO_UNREAD_POSTS_HOT}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td style="text-align: center;">{FOLDER_STICKY_IMG}</td>
+				<td class="gensmall">{L_ICON_STICKY}</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">{FOLDER_LOCKED_UNREAD_IMG}</td>
+				<td class="gensmall">{L_UNREAD_POSTS_LOCKED}</td>
+				<td>&nbsp;&nbsp;</td>
+				<td style="text-align: center;">{FOLDER_LOCKED_IMG}</td>
+				<td class="gensmall">{L_NO_UNREAD_POSTS_LOCKED}</td>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/template/viewtopic_body.html
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 236
+						<span class="postbody"><br />_________________<br />{postrow.SIGNATURE}</span>
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+						<div class="postbody"><br />_________________<br />{postrow.SIGNATURE}</div>
+
+#
+#-----[ OPEN ]--------------------------------------------- 
+#
+styles/subsilver2/theme/theme.cfg
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 19
+#
+
+# General Information about this theme
+name = subsilver2
+copyright = &copy; phpBB Group, 2003
+
+#
+#-----[ FIND ]---------------------------------------------
+# Around Line 24
+version = 3.0.7
+
+#
+#-----[ REPLACE WITH ]---------------------------------------------
+#
+version = 3.0.8
+
+# 
+#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------ 
+# 
+# EoM

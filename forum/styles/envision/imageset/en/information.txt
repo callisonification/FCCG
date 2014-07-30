@@ -1,0 +1,10 @@
+It is not necessary because the imageset buttons are controled by CSS and language/yours/common.php
+
+If you want to change button style you need to change these:
+
+1-) envision/theme/images/button_left.gif and
+    envision/theme/images/button_right.gif
+(They are background of buttons.If you are not good at CSS, I suggest you keep their width and height.)
+
+2-) envision/theme/stylesheet.css
+    .bbbutton { This is colour of the button's link for example,Post a replay }  
