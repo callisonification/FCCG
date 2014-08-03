@@ -21,7 +21,7 @@
     	<li>Self-exclusion is an important issue and supervisors, managers and security personnel need special knowledge regarding the procedure for, and ramifications of, self-exclusion, whether by law, pact or company policy.</li><br />
         <li>Facility operators would benefit from establishing self-exclusion provisions that take into account:</li><br />
         	<ul>
-            	<li>The high rate of relapse among the problem gambling population within the first year of recovery, which impacts upon exclusion period options offered (e.g. minimum of two year bans up to lifetime).</li><br />
+            	<li>The high rate of relapse among the problem gambling population within the first year of recovery, which impacts exclusion period options offered (e.g. minimum of two year bans up to lifetime).</li><br />
                 <li>The restrictions at a facility (e.g. prohibited from participating in any activity or option offered on facility premises, such as shopping, dining and entertainment; excluded only from access to the gaming floor; etc.).</li><br />
                 <li>Whether such exclusion will apply to all properties owned by the facility operator. The FCCG staff are happy to work with your facility to establish a self-exclusion policy or to review and update your existing policy.</li>
             </ul>

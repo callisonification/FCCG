@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Florida Council on Compulsive Gambling website.">
 <meta name="author" content="Christopher Allison">
@@ -39,5 +40,18 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 <script src="<?=base_url('js/plugins/bootstrap.min.js');?>"></script>
+<!-- IE 10+ media query reset -->
+<script>
+	//IE 10+ media query reset code
+	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+	  var msViewportStyle = document.createElement('style')
+	  msViewportStyle.appendChild(
+	  document.createTextNode(
+	    '@-ms-viewport{width:auto!important}'
+	    )
+	  );
+	  document.querySelector('head').appendChild(msViewportStyle);
+	}
+</script>
 </body>
 </html>

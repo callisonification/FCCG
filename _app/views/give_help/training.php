@@ -10,7 +10,7 @@
   <!-- body content here -->
   <div class="body-content">
     <div class="feature-image"> 
-      <img src="<?=site_url('assets/site_photos/educators.jpg');?>" title="<?=$heading;?>" class="thumbnail img-responsive" width="100%" /> 
+      <img src="<?=site_url('assets/site_photos/training.jpg');?>" title="<?=$heading;?>" class="thumbnail img-responsive" width="100%" /> 
     </div>
     <hr class="divider">
     <p>Professional training is another specialty of the Florida Council on Compulsive Gambling. We carefully develop programs to specifically help populations serving problem gamblers and their families. In addition to addiction and mental health professionals, we also train medical and other healthcare practitioners to assess and treat. We also provide training opportunities for law enforcement, educators, clergy, government officials, gaming industry operators, and others. This is all done in an effort to increase public awareness of problem gambling and its impact on the state of Florida.</p>

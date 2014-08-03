@@ -23,11 +23,12 @@
     </ul>
     <br />
     <p><span class="glyphicon glyphicon-question-sign text-info">&nbsp;</span><strong>Why is Responsible Gaming Training Good Customer Service?</strong></p>
-    <p class="well">Providing and promoting responsible gaming through continuous employee training is good customer service and may limit liability and risk for casino employees and facility operators. Good customer service entails responding to a customer who is in distress.  There may be many reasons for their distress, but if it is a gambling problem, staff should be trained to provide specific assistance, such as providing a problem gambling brochure, notifying a supervisor or other steps per company policy</p>
+    <p class="well">Providing and promoting responsible gaming through continuous employee training is good customer service and may limit liability and risk for casino employees and facility operators.<br /> 
+    • Good customer service entails responding to a customer who is in distress.  There may be many reasons for their distress, but if it is a gambling problem, staff should be trained to provide specific assistance, such as providing a problem gambling brochure, notifying a supervisor or other steps per company policy.</p>
     <br />
     <p><span class="glyphicon glyphicon-info-sign text-info">&nbsp;</span><strong>May Limit Liability:</strong></p>
     <ul class="well">
-    	<li>Employees should not confront the guest and accuse him/her of having a gambling problem.</li><br />
+    	<li>Employees should <strong>not</strong> confront the guest and accuse him/her of having a gambling problem.</li><br />
         <li>Problem gamblers cause problems for themselves AND the gaming venue.</li><br />
         <li>Media coverage about problem gambling related incidents, such as suicide and child neglect, serves in no one’s best interests and, at times, can present liability issues for gaming operators.</li>
     </ul>

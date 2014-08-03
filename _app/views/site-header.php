@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The Florida Council on Compulsive Gambling (FCCG) is committed to increasing public awareness about problem and compulsive gambling. The FCCG provides services and support to residents in need of assistance, as well as to professionals and others servicing this population. The organization is governed by a volunteer Board of Directors and is one of more than 35 affiliates of the National Council on Problem Gambling.">
 <meta name="author" content="Christopher Allison">
@@ -24,6 +25,7 @@
 </script>
 
 <!-- Load CSS -->
+<link href="<?=base_url('css/plugins/bootstrap.min.css');?>" rel="stylesheet">
 <link href="<?=base_url('css/main.css');?>" rel="stylesheet">
 <link href="<?=base_url('css/media.css');?>" rel="stylesheet">
 <link href="<?=base_url('css/plugins/nivo-lightbox.css');?>" rel="stylesheet">
@@ -65,6 +67,10 @@
           <li class="dropdown"> 
             <?php if($this->uri->segment(1) == 'about'): ?>
           	<a href="#" class="dropdown-toggle active" data-toggle="dropdown">About FCCG <i class="caret"></i></a>
+            <ul class="dropdown-menu norad hidden-lg">
+              <li><a href="<?=site_url('about/history');?>">History &amp; Mission</a></li>
+              <li><a href="<?=site_url('about/membership');?>">Membership &amp; Donations</a></li>
+            </ul>
             <?php else: ?>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About FCCG <i class="caret"></i></a>
             <ul class="dropdown-menu norad">
@@ -76,6 +82,16 @@
           <li class="dropdown"> 
             <?php if($this->uri->segment(1) == 'problem_gambling'): ?>
             <a href="#" class="dropdown-toggle active" data-toggle="dropdown">About Problem Gambling <i class="caret"></i></a>
+            <ul class="dropdown-menu norad hidden-lg">
+              <li><a href="<?=site_url('problem_gambling/affected');?>">Who's Affected?</a></li>
+              <li><a href="<?=site_url('problem_gambling/individuals');?>">Individuals</a></li>
+              <li><a href="<?=site_url('problem_gambling/loved_ones');?>">Loved Ones</a></li>
+              <li><a href="<?=site_url('problem_gambling/youth');?>">Youth</a></li>
+              <li><a href="<?=site_url('problem_gambling/students');?>">College Students</a></li>
+              <li><a href="<?=site_url('problem_gambling/seniors');?>">Seniors</a></li>
+              <li><a href="<?=site_url('problem_gambling/others');?>">Others</a></li>              
+              <li><a href="<?=site_url('problem_gambling/recovery');?>">Recovery Stories</a></li>
+            </ul>
             <?php else: ?>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Problem Gambling <i class="caret"></i></a>
             <ul class="dropdown-menu norad">
@@ -87,7 +103,7 @@
           <?php if( $this->uri->segment(1) == 'get_help' ): ?>
           <li class="dropdown"> 
             <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Get Help <i class="caret"></i></a>
-            <ul class="dropdown-menu norad">
+            <ul class="dropdown-menu norad hidden-lg">
               <li><a href="<?=site_url('get_help/individuals');?>">Help for Individuals</a></li>
               <li><a href="<?=site_url('get_help/loved_ones');?>">Help for Loved Ones</a></li>
               <li><a href="<?=site_url('get_help/helpline');?>">Helpline Programs</a></li>
@@ -99,7 +115,7 @@
           <?php if( $this->uri->segment(1) == 'give_help' ): ?>
           <li class="dropdown"> 
             <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Give Help <i class="caret"></i></a>
-            <ul class="dropdown-menu norad">
+            <ul class="dropdown-menu norad hidden-lg">
               <li><a href="<?=site_url('give_help/gambling_addiction');?>">About Gambling Addiction</a></li>
               <li><a href="<?=site_url('give_help/responsible_gambling');?>">Responsible Gambling</a></li>
               <li><a href="<?=site_url('give_help/programs');?>">Programs Information</a></li>
@@ -112,6 +128,13 @@
           <li class="dropdown"> 
             <?php if( $this->uri->segment(1) == 'resources' ): ?>
             <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Resources <i class="caret"></i></a>
+            <ul class="dropdown-menu norad hidden-lg">
+              <li><a href="<?=site_url('resources/publications');?>">Print Materials</a></li>
+              <li><a href="<?=site_url('resources/videos');?>">Videos</a></li>
+              <li><a href="<?=site_url('resources/toolkits');?>">Toolkits</a></li>
+              <li><a href="<?=site_url('resources/research');?>">Research Materials</a></li>
+              <li><a href="<?=site_url('resources/faq');?>">Frequently Asked Questions</a></li>
+            </ul>
             <?php else: ?>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <i class="caret"></i></a>
             <ul class="dropdown-menu norad">

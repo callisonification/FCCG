@@ -71,14 +71,40 @@
           </div>
         </div>
       </div>
+      <hr class="divider visible-xs visible-sm" />
     </div>
-    <hr class="divider visible-xs visible-sm" />
     <!-- normal nav for all other screens -->
     <div class="footer-left col-xs-12 col-md-8">
       <section class="mission">
         <h4>Our Mission</h4>
         <p class="lead">&quot; The Florida Council on Compulsive Gambling (FCCG) is committed to increasing public awareness about problem and compulsive gambling. The FCCG provides services and support to residents in need of assistance, as well as to professionals and others servicing this population. The organization is governed by a volunteer Board of Directors and is one of more than 35 affiliates of the National Council on Problem Gambling.&quot;</p>
         <!-- social list goes here -->
+        <div class="soc-icons">
+        	<h4>Connect with Us</h4>
+        	<ul>
+            	<li>
+                  <a href="https://www.facebook.com/gamblinghelp" title="Like us on Facebook&trade;" target="_blank">
+                    <img src="<?=site_url('assets/logos/soc-icon.png')?>" alt="Like us on Facebook" />
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.pinterest.com/888admitit/" title="Follow us on Pinterest&trade;" target="_blank">
+                    <img src="<?=site_url('assets/logos/soc-icon-02.png')?>" alt="Follow us on Pinterest" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/FLCouncil" title="Follow us on Twitter&trade;" target="_blank">
+                    <img src="<?=site_url('assets/logos/soc-icon-03.png')?>" alt="Follow us on Twitter" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/channel/UCAPVUhfQG9oppoiEg2VlJgg" title="Watch us on YouTube&trade;" target="_blank">
+                    <img src="<?=site_url('assets/logos/soc-icon-04.png')?>" alt="Watch us on YouTube" />
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <hr class="visible-xs visible-sm" />
       </section>
     </div>
     <div class="footer-right col-xs-12 col-md-4">
@@ -107,9 +133,10 @@
           </div>
         </form>
       </div>
+      <hr class="visible-xs visible-sm" />
     </div>
     <span class="clearfix"></span>
-    <hr />
+    <hr class="hidden-xs hidden-sm" />
     <ul class="footer-info hidden-xs">
       <li><span class="glyphicon glyphicon-map-marker">&nbsp;</span> <small>121 East 1st Street &nbsp;/&nbsp; Sanford, FL 32771</small></li>
       <li>|</li>
@@ -151,7 +178,8 @@
     <li><a href="#" title="Email Us!" data-toggle="modal" data-target="#form-contact-modal"> <small><span class="glyphicon glyphicon-envelope"></span></small></a> </li>
     <li><a target="_blank" title="Chat with Us!" href="http://webapp.icarol.com/pub/Messaging/StatusBadge.aspx?OrgNum=54632" onclick="window.open('http://webapp.icarol.com/pub/Messaging/StatusBadge.aspx?OrgNum=54632', 'newwindow', 'width=500, height=400'); return false;"><small><span class="glyphicon glyphicon-user"></span></small></a></li>
   </ul>
-  <span class="clearfix"></span> </div>
+  <span class="clearfix"></span> 
+</div>
 <!-- /end footer --> 
 
 <!-- Standard contact modal -->
@@ -199,7 +227,7 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="text" class="form-control norad" name="phone" placeholder="888-777-6543" maxlength="10" required="required" />
+            <input type="text" class="form-control norad" name="phone" placeholder="888-777-6543" maxlength="12" required="required" />
           </div>
           <div class="form-group">
             <textarea name="mssg" class="form-control norad" rows="8" placeholder="Your Message" required="required"></textarea>

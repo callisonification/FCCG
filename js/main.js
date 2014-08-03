@@ -104,7 +104,7 @@ $(document).ready(function(){
 	var panel = $('.help');
 	var innerPanel = $('.help-inner-panel');
 	
-	var top = $('.help-inner-panel').height() - 25;
+	var top = $('.help img').height() + 20;
 	var bttm = $('.help-inner-panel').css('margin-top');
 	
 	$(panel).on('mouseenter', function(){
@@ -547,7 +547,7 @@ $(document).ready(function(){
 	 *
 	 *************************/
 	 
-	 //individuals quiz click handler
+	 //individuals quiz submit handler
 	 $('#ind-quiz-modal .submit').on('click', function(e){
 		 
 		 //declare quiz vars
@@ -558,7 +558,10 @@ $(document).ready(function(){
 		 //loop thru each and get value
 		 $(rads).each(function(index, element) {
             total += parseInt($(this).val(), 10);
-			count++;
+			if( $(this).val() == 10 )
+			{
+				count++;
+			}
         });
 		
 		//calculate score
@@ -600,7 +603,7 @@ $(document).ready(function(){
 		return false;
 	 });
 	 
-	 //loved ones quiz click handler
+	 //loved ones quiz submit handler
 	 $('#lo-quiz-modal .submit').on('click', function(e){
 		 
 		 //declare quiz vars
@@ -611,15 +614,16 @@ $(document).ready(function(){
 		 //loop thru each and get value
 		 $(rads).each(function(index, element) {
             total += parseInt($(this).val(), 10);
-			count++;
+			if( $(this).val() == 10 )
+			{
+				count++;
+			}
         });
 		
 		//calculate score
 		var score = Math.floor(count)		
 		var scoreStr = '';
-		
-		console.log(score);
-		
+				
 		if(score < 1) 
 		{
 			scoreStr = '<p class="text-center">Based upon your Assessment, you may be a low risk gambler.</p>'
@@ -654,6 +658,91 @@ $(document).ready(function(){
 						
 		return false;
 	 });
+	 
+	 //if a user clicks checks NO as an answer, part-one is hidden
+	 //part-two is revealed and quiz continues as per usual
+	 $('#teen-quiz-modal input[type=radio]').on('change', function(){
+		if( $(this).val() == 0 ) {
+			$('#teen-quiz-modal .part-one').addClass('hidden');
+			$('#teen-quiz-modal .part-two').removeClass('hidden');	
+		}
+	 });
+	 
+	 //teens quiz submit handler
+	 $('#teen-quiz-modal .submit').on('click', function(e){
+		 
+		 //declare quiz vars
+		 var rads = $('input[type=radio]:checked');
+		 var total = 0;
+		 var count = 0;
+		 
+		 //loop thru each and get value
+		 $(rads).each(function(index, element) {
+            total += parseInt($(this).val(), 10);
+			if( $(this).val() == 10 )
+			{
+				count++;
+			}
+        });
+		
+		//calculate score
+		var score = Math.floor(count)		
+		var scoreStr = '';
+				
+		if(score < 1) 
+		{
+			scoreStr = '<p class="text-center">Based upon your Assessment, you may be a low risk gambler.</p>'
+						;
+		}
+		else if(score == 1) 
+		{
+			scoreStr = '<p class="text-center">Based upon your Assessment, you may be an at-risk gambler.</p>'
+						;
+		}
+		else if(score >= 2 && score <= 3) 
+		{
+			scoreStr = '<p class="text-center">Based upon your Assessment, you may be a problem gambler.</p>'
+		}
+		else if(score >= 4) 
+		{
+			scoreStr = '<p class="text-center">Based upon your Assessment, you may be a compulsive gambler.</p>'
+		}
+		
+		var html = '<h3 class="text-center text-info"><strong>You Answered Yes to '+score+' question(s).</strong></h3>'
+				   + scoreStr
+				   + '<br />'
+				   +'<div class="table-responsive"><table class="table table-bordered"><tr><td>0</td><td>Low Risk/Social Gambler</td></tr><tr>'
+				   +'<td>1</td><td>At-Risk Gambler</td></tr><tr><td>2-3</td><td>Problem Gambler</td></tr><tr><td>4+</td><td>Compulsive Gambler</td>'
+				   +'</tr></table></div>'
+				   + '<p class="text-center">If you would like more information or need assistance with a gambling problem,</p>' 
+				   + '<p class="text-center">please contact our <strong>Helpline</strong> at:</p>'
+				   + '<h4 class="text-center text-info">888-236-4848</h4>';
+				   
+		if(score == 8 && $('#teen-quiz-modal .part-two').hasClass('hidden'))
+		{
+			var html =  '<h3 class="text-center text-info"><strong>You Answered Yes to '+score+' question(s).</strong></h3>'
+						+ '<p class="well well-sm">Having all “yes” responses indicates that you are a low-risk gambler. In other words, you recognize gambling as a leisure time activity, and don’t spend more money on gambling than you would on, say, going to the movies. You never spend money you don’t have on gambling, you never expect to win, losing doesn’t get you down, and you have other hobbies besides gambling.</p>'
+						+ '<p class="text-center">If you would like more information or need assistance with a gambling problem,</p>' 
+				   		+ '<p class="text-center">please contact our <strong>Helpline</strong> at:</p>'
+				   		+ '<h4 class="text-center text-info">888-236-4848</h4>';	
+		}
+				
+		$('#teen-quiz-modal .modal-body').empty();
+		$('#teen-quiz-modal .modal-body').html(html);
+						
+		return false;
+	 });
+	 
+	//IE 10+ media query reset code
+	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+	  var msViewportStyle = document.createElement('style')
+	  msViewportStyle.appendChild(
+	  document.createTextNode(
+	    '@-ms-viewport{width:auto!important}'
+	    )
+	  );
+	  document.querySelector('head').appendChild(msViewportStyle);
+	}
 	
 })
 //end doc.ready();

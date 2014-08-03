@@ -7,5 +7,6 @@
   <!-- begin help section -->
   <div class="well">
   	<!-- content here -->
+    <p>Coming Soon...</p>
   </div>
 </div>

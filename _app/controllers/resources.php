@@ -6,14 +6,11 @@ class Resources extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('crud_model');
-		
-		$n = time() + (60 * 60 * 24);
-		$this->output->cache($n);
 	}
 	
 	function publications() {
 		
-		$data['pubs'] = '';
+		$data['pubs'] = $this->crud_model->get_all_pubs();
 		$data['heading'] = 'Print Materials';
 		
 		$this->load->view('site-header');

@@ -1,13 +1,23 @@
 @charset "UTF-8";
-@import url("../plugins/bootstrap.min.css");
 @import url("../colors.css");
 /* 
-	CSS Document 
-	author 	: Christopher Allison
-	email 	: callisonification@gmail.com
-	date	: 3/12/14
-	version	: 1.2
-*/
+ *	CSS Document 
+ *	author 	: Christopher Allison
+ *	email 	: callisonification@gmail.com
+ *	date	: 3/12/14
+ *	version	: 1.2
+ */
+
+/*
+ *	
+ *	Bootstrap IE 10+ reset
+ *
+ */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
 
 body {
 	padding-top: 40px;

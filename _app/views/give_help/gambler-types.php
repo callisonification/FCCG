@@ -22,7 +22,7 @@
     <hr class="divider">
     <blockquote class="blockquote lead">&quot; Escape gamblers differ in that they often gamble to escape from problems, feeling they can free themselves from pain while gambling.&quot;</blockquote>
     <hr class="divider">          
-    <p>Regardless of the player type, each problem can progress at different speeds, with some developing a problem in days and others feeling fine for years. Once you lose the ability to set limits and walk away, you may become at risk for creating huge problems by continuing to gamble. </p>
+    <p>Regardless of the player type, each problem can progress at different speeds, with some developing a problem in days, and others feeling fine for years. Once you lose the ability to set limits and walk away, you may become at risk for creating huge problems by continuing to gamble. </p>
     <p>&nbsp;</p>
     <hr class="divider">
     <p>Thankfully, help is available and gambling addiction can be treated if recognized. If you need assistance, contact our 24 hour, confidential Helpline <strong>888-ADMIT-IT (888-236-4848)</strong> for resources and support.</p>

@@ -60,7 +60,7 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="text" class="form-control norad" name="phone" placeholder="888-777-6543" maxlength="10" required="required" />
+            <input type="text" class="form-control norad" name="phone" placeholder="888-777-6543" maxlength="12" required="required" />
           </div>
           <div class="form-group">
             <label for="volunteer"><small>Interested in volunteering?</small></label>
