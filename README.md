@@ -6,7 +6,9 @@ Florida Council on Compulsive Gambling redesign
 //==========================================================
 
 Christopher Allison
+
 email : callisonification@gmal.com
+
 www : www.callisonification.com
 
 ---------------------------------------------------------------------------------------
